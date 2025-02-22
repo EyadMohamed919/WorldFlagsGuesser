@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CustomActivityTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Define your own custom button styles here to avoid inheriting theme defaults -->
+<!--        <item name="android:buttonStyle">@style/normal_Button_Style</item>-->
+        <item name="android:statusBarColor">@color/brown_dark</item>
+    </style>
+
+    <style name="normal_Button_Style">
+        <item name="android:background">@drawable/normal_button_background</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:color">@color/orange_main</item>
+        <item name="android:gravity">center</item>
+    </style>
+</resources>
