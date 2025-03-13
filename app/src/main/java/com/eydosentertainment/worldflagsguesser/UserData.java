@@ -6,9 +6,12 @@ import android.content.SharedPreferences;
 import com.google.gson.Gson;
 
 public class UserData {
+
     private int highScore;
+    private int timeHighScore;
     private int currentScore;
     private int numberOfCountriesChosen;
+    private int currentTime;
 
     public int getNumberOfCountriesChosen()
     {
@@ -22,11 +25,30 @@ public class UserData {
     public void setCurrentScore(int currentScore)
     {
         this.currentScore = currentScore;
-        System.out.println("The current score inside User is " + this.currentScore);
+        if(this.currentScore > this.highScore)
+        {
+            this.highScore = this.currentScore;
+        }
     }
 
     public int getCurrentScore()
     {
         return currentScore;
+    }
+
+    public int getHighScore() {
+        return highScore;
+    }
+
+    public int getCurrentTime() {
+        return currentTime;
+    }
+
+    public void setCurrentTime(int currentTime) {
+        this.currentTime = currentTime;
+        if(this.currentTime > this.timeHighScore)
+        {
+            this.timeHighScore = this.currentTime;
+        }
     }
 }

@@ -35,6 +35,7 @@ public class GuessingActivity extends AppCompatActivity{
         if(data.getUserData() == null)
         {
              user = new UserData();
+             user.setNumberOfCountriesChosen(4);
         }
         else
         {
@@ -98,6 +99,6 @@ public class GuessingActivity extends AppCompatActivity{
         choiceButton3 = findViewById(R.id.ChoiceBtn3);
         choiceButton4 = findViewById(R.id.ChoiceBtn4);
         nextButton = findViewById(R.id.nextBtn);
-        progressTextView = findViewById(R.id.ProgressTextView);
+        progressTextView = findViewById(R.id.ScoreText);
     }
 }

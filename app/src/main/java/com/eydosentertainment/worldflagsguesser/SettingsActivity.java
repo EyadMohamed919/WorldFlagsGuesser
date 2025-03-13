@@ -16,6 +16,7 @@ public class SettingsActivity extends AppCompatActivity {
 
     private RadioButton fourFlagsButton;
     private RadioButton tenFlagsButton;
+    private RadioButton fullFlagsButton;
     private FloatingActionButton settingsReturn;
     private int numbersOfCountriesChosen;
 
@@ -40,6 +41,7 @@ public class SettingsActivity extends AppCompatActivity {
         {
             case 4: fourFlagsButton.setChecked(true);
             case 10: tenFlagsButton.setChecked(true);
+            case 194: fullFlagsButton.setChecked(true);
         }
 
         settingsReturn.setOnClickListener(new View.OnClickListener() {
@@ -52,6 +54,9 @@ public class SettingsActivity extends AppCompatActivity {
                 }
                 else if(tenFlagsButton.isChecked() == true) {
                     numbersOfCountriesChosen = 10;
+                }
+                else if(fullFlagsButton.isChecked() == true) {
+                    numbersOfCountriesChosen = 194;
                 }
                 else {
                     numbersOfCountriesChosen = 4;
@@ -72,6 +77,7 @@ public class SettingsActivity extends AppCompatActivity {
     public void assignViews(){
         fourFlagsButton = findViewById(R.id.FourRadioBtn);
         tenFlagsButton = findViewById(R.id.TenRadioBtn);
+        fullFlagsButton = findViewById(R.id.AllRadioBtn);
         settingsReturn = findViewById(R.id.SettingsReturn);
     }
 }
