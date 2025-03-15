@@ -9,9 +9,12 @@ public class UserData {
 
     private int highScore;
     private int timeHighScore;
+    private int countriesPlayedUnderTimeHighScore;
     private int currentScore;
     private int numberOfCountriesChosen;
     private int currentTime;
+    private int countriesPlayedUnderTime;
+
 
     public int getNumberOfCountriesChosen()
     {
@@ -49,6 +52,18 @@ public class UserData {
         if(this.currentTime > this.timeHighScore)
         {
             this.timeHighScore = this.currentTime;
+        }
+    }
+
+    public int getCountriesPlayedUnderTime() {
+        return countriesPlayedUnderTime;
+    }
+
+    public void setCountriesPlayedUnderTime(int countriesPlayedUnderTime) {
+        this.countriesPlayedUnderTime = countriesPlayedUnderTime;
+        if(this.countriesPlayedUnderTimeHighScore > this.countriesPlayedUnderTime)
+        {
+            this.countriesPlayedUnderTimeHighScore = this.countriesPlayedUnderTime;
         }
     }
 }

@@ -11,7 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/CustomActivityTheme"
         tools:targetApi="34">
-
+        <service
+            android:name=".AudioService"
+            android:enabled="true"
+            android:exported="false"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"> <intent-filter>
@@ -20,9 +23,11 @@
         </intent-filter>
         </activity>
         <activity android:name=".GuessingActivity"></activity>
+        <activity android:name=".ScoreTimeActivity"></activity>
         <activity android:name=".WinningActivity"></activity>
         <activity android:name=".SettingsActivity"></activity>
         <activity android:name=".TimeAttack"></activity>
+
 
     </application>
 

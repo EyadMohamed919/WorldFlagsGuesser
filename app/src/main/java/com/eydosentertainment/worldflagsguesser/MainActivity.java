@@ -1,7 +1,9 @@
 package com.eydosentertainment.worldflagsguesser;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -16,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
     private FloatingActionButton settingsButton;
     private TextView highscoreText;
     private ImageButton timeButton;
+    private MediaPlayer mediaPlayer;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +37,9 @@ public class MainActivity extends AppCompatActivity {
         {
             user = data.getUserData();
         }
+
+        Intent serviceIntent = new Intent(this, AudioService.class);
+        startService(serviceIntent);
 
         highscoreText.setText("Highscore: " + user.getHighScore());
 
@@ -69,5 +76,29 @@ public class MainActivity extends AppCompatActivity {
         settingsButton = findViewById(R.id.SettingsButton);
         highscoreText = findViewById(R.id.HighScoreText);
         timeButton = findViewById(R.id.TimeBtn);
+    }
+
+    protected void onPause() {
+        super.onPause();
+        Intent pauseIntent = new Intent(this, AudioService.class);
+        pauseIntent.setAction("PAUSE");
+        startService(pauseIntent);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Intent resumeIntent = new Intent(this, AudioService.class);
+        resumeIntent.setAction("RESUME");
+        startService(resumeIntent);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (mediaPlayer != null) {
+            mediaPlayer.stop();
+            mediaPlayer.release();
+        }
     }
 }
