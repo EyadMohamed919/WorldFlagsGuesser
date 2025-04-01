@@ -28,7 +28,6 @@
         android:id="@+id/PlayBtn"
         android:layout_width="300dp"
         android:layout_height="110dp"
-        android:layout_marginTop="612dp"
         android:layout_marginBottom="24dp"
         android:background="@drawable/playbackground"
         android:contentDescription="PlayButton"
@@ -36,8 +35,7 @@
         app:layout_constraintBottom_toTopOf="@+id/TimeBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
         android:id="@+id/TimeBtn"
@@ -49,7 +47,6 @@
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -95,13 +92,15 @@
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="0dp"
-        android:layout_height="387dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
+        android:layout_height="350dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="50dp"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.13999999"
         app:srcCompat="@drawable/homelogo_1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

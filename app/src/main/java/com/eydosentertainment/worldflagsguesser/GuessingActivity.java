@@ -63,6 +63,7 @@ public class GuessingActivity extends AppCompatActivity{
                         System.out.println("Countries Finished!");
                         Intent intent = new Intent(GuessingActivity.this, WinningActivity.class);
                         startActivity(intent);
+                        finish();
                         return;
                     }
                     countriesDone++;

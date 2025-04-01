@@ -1,6 +1,7 @@
 package com.eydosentertainment.worldflagsguesser;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ScreenHelper.setCustomDensity(this, 420);
         setContentView(R.layout.activity_main);
         assignViews();
 
@@ -49,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, GuessingActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -58,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -66,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, TimeAttack.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -76,6 +81,14 @@ public class MainActivity extends AppCompatActivity {
         settingsButton = findViewById(R.id.SettingsButton);
         highscoreText = findViewById(R.id.HighScoreText);
         timeButton = findViewById(R.id.TimeBtn);
+    }
+
+    private void resetFontScale() {
+        Configuration config = getResources().getConfiguration();
+        if (config.fontScale != 1.0f) { // Only update if scaling is not default
+            config.fontScale = 1.0f;
+            getResources().updateConfiguration(config, getResources().getDisplayMetrics());
+        }
     }
 
     protected void onPause() {

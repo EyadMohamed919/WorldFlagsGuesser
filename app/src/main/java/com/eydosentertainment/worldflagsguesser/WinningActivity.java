@@ -34,6 +34,7 @@ public class WinningActivity extends AppCompatActivity{
             public void onClick(View v) {
                 Intent intent = new Intent(WinningActivity.this, GuessingActivity.class);
                 startActivity(intent);
+                finish();
                 return;
             }
         });
@@ -43,6 +44,7 @@ public class WinningActivity extends AppCompatActivity{
             public void onClick(View v) {
                 Intent intent = new Intent(WinningActivity.this, MainActivity.class);
                 startActivity(intent);
+                finish();
                 return;
             }
         });
